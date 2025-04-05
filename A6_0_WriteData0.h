@@ -16,6 +16,7 @@ void ReadReserv(); // КОГДА ПРОЦЕСС ПОЙДЁТ - ЗАЙМУСЬ РЕЗЕРВНЫМ
                    // ПЕРЕСОХРАНЕНИЕМ!!!!!!!
 
 void A6_0_WriteData0() {
+  cout << "A6_0_WriteData0()" << endl;
   // cout << "M6_0_WriteData0()" << endl;
   int x, y;
   //! write(*,*) 'S6_WRITE_DATA0.for'
@@ -51,7 +52,6 @@ void A6_0_WriteData0() {
 
     nf = 0;
     cout << "Otkroem vse faily v standartnom statuse (Peresapis)." << endl;
-    system("pause");  // Задержка экрана.
     A6_1_SaverGrid(); // В фортране сетка записывалась в этой подпрограмме.
                       // Сейчас отдельно.
     A6_2_WriteStep();

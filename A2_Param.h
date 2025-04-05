@@ -11,6 +11,7 @@
 #include <cmath>
 
 void A2_Param() {
+  cout << "A2_Param()" << endl;
   // cout << "M4_Param()" << endl;
   //! write(*, *) 'S4_Param.for'
   double p0, am20p, p1m, p2m;

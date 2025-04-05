@@ -11,6 +11,8 @@
 
 // #define W 50
 void A6_1_SaverGrid() {
+
+  cout << endl << "A6_1_SaverGrid" << endl;
   int x, y;
 
   ofstream hx("hx.dat");

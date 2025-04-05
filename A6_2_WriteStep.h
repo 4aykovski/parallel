@@ -15,6 +15,7 @@ void WriteHeadOneFile(ofstream &File) {
 }
 
 void A6_2_WriteStep() {
+  cout << "A6_2_WriteStep" << endl;
 
   //	FTime << Time * tpaz << ' ' << Time*tpaz+1 << endl;
 

@@ -18,6 +18,7 @@
 int IndexSW();
 
 void A7_0_Evolution() {
+  cout << "A7_0_Evolution" << endl;
 
   int TmRestartOld = int(Time / DtRestart);
   int TmWriteStepOld = int(Time / DtWriteStep);

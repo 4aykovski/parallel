@@ -9,12 +9,15 @@
 #include "Common_TTT.h"
 #include "Common_VVV.h"
 
+#include <climits>
+
 void next(ifstream &vvod) {
   vvod.clear();
-  vvod.ignore(TIME_MAX, '\n');
+  vvod.ignore(INT_MAX, '\n');
 }
 
 void A1_Vvod() {
+  cout << "A1_Vvod" << endl;
   //	HX[5] = 2.5;
   ifstream vvod("__Vvod_Cpp.dat");
   /*if (!vvod) {

@@ -13,6 +13,7 @@
 void Razmaz_SW();
 
 void A5_InitalCond() {
+  cout << "A5_InitalCond()" << endl;
   // cout << "M5_0_InitalCond()" << endl;
 
   // int i, k;
