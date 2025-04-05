@@ -1,4 +1,7 @@
 #pragma once
+
+#include "FilesExtern.h"
+
 ofstream FTime;
 ofstream Lir1;
 ofstream LirP;

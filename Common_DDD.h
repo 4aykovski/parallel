@@ -1,5 +1,5 @@
 #pragma once
-//Common / DDD / 
+// Common / DDD /
 
 double sigma, X3C, dd, sd, alfa10;
 double alfa101, alfa102, alfa103;
