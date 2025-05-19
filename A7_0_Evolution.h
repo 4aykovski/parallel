@@ -42,6 +42,7 @@ Label6:
   Tau = F7_1_Tau();
 
   A7_20_RungeKutt(Tau);
+  // A7_20_RungeKutt_Parallel(Tau);
 
   Time = Time + Tau;
   TimePaz = Time * tpaz;

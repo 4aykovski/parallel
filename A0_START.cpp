@@ -16,7 +16,10 @@
 #include "A6_0_WriteData0.h"
 #include "A7_0_Evolution.h"
 
+#include <omp.h>
+
 int main() {
+  omp_set_num_threads(omp_get_num_procs());
   cout << "vvod from files: "; //<< endl;
   cin >> nf;
 
