@@ -1,15 +1,9 @@
 #pragma once
 
-#include "FilesExtern.h"
-
-#include "Common_AAA.h"
-#include "Common_CCC.h"
-#include "Common_DDD.h"
-#include "Common_GGG.h"
-#include "Common_TTT.h"
-#include "Common_VVV.h"
-
-#include <climits>
+#include <iostream>
+#include <limits.h>
+#include <math.h>
+using namespace std;
 
 void next(ifstream &vvod) {
   vvod.clear();
@@ -17,7 +11,6 @@ void next(ifstream &vvod) {
 }
 
 void A1_Vvod() {
-  cout << "A1_Vvod" << endl;
   //	HX[5] = 2.5;
   ifstream vvod("__Vvod_Cpp.dat");
   /*if (!vvod) {

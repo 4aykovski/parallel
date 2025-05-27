@@ -1,18 +1,9 @@
 #pragma once
 
-#include "FilesExtern.h"
-
-#include "Common_AAA.h"
-#include "Common_CCC.h"
-#include "Common_DDD.h"
-#include "Common_GGG.h"
-#include "Common_TTT.h"
-#include "Common_VVV.h"
-
 // MODULE M7_4_WRITE_RESTART
 
 // SUBROUTINE S7_4_WRITE_RESTART(nxp,nyp)
-void A7_39_WritRestart() {
+void A73_WriteRestart() {
 
   //	int i, k;
   int x, y;
@@ -71,13 +62,3 @@ void A7_39_WritRestart() {
   //!		write(*,*) 'Final zapisi  t(mkc)=',Time*tpaz
 
 } // END SUBROUTINE S7_4_WRITE_RESTART
-
-/*	write(20) Time, nyp, nxp, ((ro1(K, i), i = 1, nxp), K = 1, nyp),
-       *((ro2(K,i),i=1,nxp),K=1,nyp),
-       *((u1(K,i),i=1,nxp),K=1,nyp),
-       *((u2(K,i),i=1,nxp),K=1,nyp),
-       *((v1(K,i),i=1,nxp),K=1,nyp),
-       *((v2(K,i),i=1,nxp),K=1,nyp),
-       *((e1(K,i),i=1,nxp),K=1,nyp),
-       *((e2(K,i),i=1,nxp),K=1,nyp)
-              close(20) */

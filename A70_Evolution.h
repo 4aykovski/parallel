@@ -1,24 +1,13 @@
 #pragma once
-
-#include "A6_2_WriteStep.h"
-#include "FilesExtern.h"
-
-#include "Common_AAA.h"
-#include "Common_CCC.h"
-#include "Common_DDD.h"
-#include "Common_GGG.h"
-#include "Common_TTT.h"
-#include "Common_VVV.h"
-
-#include "A7_20_RungeKutt.h"
-#include "A7_39_WritRestart.h"
-#include "Ret7_1_Tau.h"
 #include "Timer.h"
+
+#include "A71_Return_TAU.h"
+#include "A720_RungeKutt.h"
+#include "A73_WriteRestart.h"
 
 int IndexSW();
 
-void A7_0_Evolution() {
-  cout << "A7_0_Evolution" << endl;
+void A70_Evolution() {
 
   int TmRestartOld = int(Time / DtRestart);
   int TmWriteStepOld = int(Time / DtWriteStep);
@@ -27,7 +16,7 @@ void A7_0_Evolution() {
 
   // int k, i;
   int y, x;
-  double Tau;
+  double TAU;
   NT = 1;
   Timer t;
   // Timer t1;
@@ -39,12 +28,12 @@ void A7_0_Evolution() {
 
 Label6:
 
-  Tau = F7_1_Tau();
+  TAU = A71_Return_TAU();
 
-  A7_20_RungeKutt(Tau);
-  // A7_20_RungeKutt_Parallel(Tau);
+  // A720_RungeKutt(TAU);
+  A720_RungeKutt_Parallel(TAU);
 
-  Time = Time + Tau;
+  Time = Time + TAU;
   TimePaz = Time * tpaz;
   NT = NT + 1;
 
@@ -55,7 +44,7 @@ Label6:
 
   //!*********************************************************
   if (TmRestartNew > TmRestartOld) {
-    A7_39_WritRestart();
+    A73_WriteRestart();
     TmRestartOld = TmRestartNew;
   } // end if
   // CALL S7_5_AMAX(metr)
@@ -65,9 +54,9 @@ Label6:
   if (TmWriteStepNew >
       TmWriteStepOld) { // if(TmWriteStepNew > TmWriteStepOld) then
     //	CALL S6_1_WRITE_STEP(Time,tpaz,om,c1v,c2v,gam1,gam2)
-    A6_2_WriteStep();
+    A62_WriteStep();
     //	FTime << Time * tpaz << "   " << Tau * tpaz << "   " << t.get() << endl;
-    FTime << TimePaz << "\t  " << Tau * tpaz << "   " << t.get() << endl;
+    FTime << TimePaz << "\t  " << TAU * tpaz << "   " << t.get() << endl;
     TmWriteStepOld = TmWriteStepNew;
     //	write(24, *)	Time* tpaz, Tau* TPAZ
   } // end if

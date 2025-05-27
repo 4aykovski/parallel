@@ -1,17 +1,8 @@
 #pragma once
 
-#include "FilesExtern.h"
-
-#include "Common_AAA.h"
-#include "Common_CCC.h"
-#include "Common_DDD.h"
-#include "Common_GGG.h"
-#include "Common_TTT.h"
-#include "Common_VVV.h"
-#include <cmath>
+#include <math.h>
 
 void A2_Param() {
-  cout << "A2_Param()" << endl;
   // cout << "M4_Param()" << endl;
   //! write(*, *) 'S4_Param.for'
   double p0, am20p, p1m, p2m;

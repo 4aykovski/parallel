@@ -1,17 +1,8 @@
 #pragma once
 
-#include "FilesExtern.h"
-
-#include "Common_AAA.h"
-#include "Common_CCC.h"
-#include "Common_DDD.h"
-#include "Common_GGG.h"
-#include "Common_TTT.h"
-#include "Common_VVV.h"
-#include <cmath>
+#include <math.h>
 
 void A4_Diff_T0() {
-  cout << endl << "A4_Diff_T0()" << endl;
   double pi = 4 * atan(1.0);
   double DifTime, DifC, DifH;
   double DifTau, ccA, ccB;
@@ -32,7 +23,7 @@ void A4_Diff_T0() {
                 //	sigma = sigma / (dL*1000);
 
   DifTime = TimeDif / 1000; //! время формирования диффузионной области в сек.
-  DifC = d0Nusl * 1e-4;     //! коэффициент диффузии в м * м / с
+  DifC = d0Nusl * 1e-4; //! коэффициент диффузии в м * м / с
   DifH = h0 / 10;
 
   DifTau = DifH * DifH / (5.0 * DifC);
@@ -127,14 +118,14 @@ void A4_Diff_T0() {
       //! СИММЕТРИЯ_Begin_5.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       for (y = IndexYN; y <= IndexYK; y++) { // do k = NYdn, NYup
 
-        LRO1[y][x] = ccA * (RO1[y + 1][x] + RO1[y - 1][x] + RO1[y][x + 1] +
+        KRO1[y][x] = ccA * (RO1[y + 1][x] + RO1[y - 1][x] + RO1[y][x + 1] +
                             RO1[y][x - 1] - 4.0 * RO1[y][x]);
       }
     } // enddo:for(i).
     //!@@@@ ДЛЯ СИММЕТРИИ 7 @@@@@@@@@@@@@@@@@!
     for (x = IndexXN + 1; x <= IndexXK; x++) { // do i = IL1 + 1, IR0
       for (y = IndexYN; y <= IndexYK; y++) {   // do k = NYdn, NYup
-        RO1[y][x] += LRO1[y][x];
+        RO1[y][x] += KRO1[y][x];
       }
 
       //! Симметрич.гр.усл.на нижн.гр.(почти в 2 раза уменш.к - во узлов)

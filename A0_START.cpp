@@ -1,25 +1,29 @@
 #pragma once
 
-#include "Common_DDD.h"
+#include "FilesExtern.h"
 
-#include "FilesCreate.h"
-
+#include "Common_AAA.h"
+#include "Common_CCC.h"
 #include "Common_DDD.h"
+#include "Common_GGG.h"
+#include "Common_TTT.h"
+#include "Common_VVV.h"
 
 // #include "Timer.h"
+#include "FilesCreate.h"
 
 #include "A1_Vvod.h"
 #include "A2_Param.h"
 #include "A3_0_Grid.h"
 #include "A4_Diff_T0.h"
 #include "A5_InitalCond.h"
-#include "A6_0_WriteData0.h"
-#include "A7_0_Evolution.h"
-
+#include "A60_WriteData0.h"
+#include "A70_Evolution.h"
 #include <omp.h>
 
 int main() {
-  omp_set_num_threads(omp_get_num_procs());
+  omp_set_num_threads(omp_get_num_procs()); // Использовать все доступные ядра
+
   cout << "vvod from files: "; //<< endl;
   cin >> nf;
 
@@ -31,10 +35,10 @@ int main() {
   A4_Diff_T0();
   // M4_Param();
   A5_InitalCond();
-  A6_0_WriteData0();
+  A60_WriteData0();
 
   //	Timer t;
-  A7_0_Evolution();
+  A70_Evolution();
 
   cout << endl;
   return 0;

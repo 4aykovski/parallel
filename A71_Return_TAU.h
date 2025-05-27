@@ -1,16 +1,6 @@
 #pragma once
 
-#include "FilesExtern.h"
-
-#include "Common_AAA.h"
-#include "Common_CCC.h"
-#include "Common_DDD.h"
-#include "Common_GGG.h"
-#include "Common_TTT.h"
-#include "Common_VVV.h"
-#include <cmath>
-
-double F7_1_Tau() {
+double A71_Return_TAU() {
   double am, am1, am2, am3, am4, aa;
   // int k,i;
 
