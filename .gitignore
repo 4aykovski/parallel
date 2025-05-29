@@ -1043,3 +1043,5 @@ dkms.conf
 *.dis
 
 *.dat
+
+!__Vvod_Cpp.dat
