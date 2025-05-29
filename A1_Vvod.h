@@ -16,6 +16,8 @@ void A1_Vvod() {
   /*if (!vvod) {
           cout << "No file"; return -1;
   }*/
+  vvod >> ExecutionMode;
+  next(vvod);
   vvod >> TypeTau;
   next(vvod);
   // Тип реализации по времени (p-ПредикторКорректор, 1-Эйлер, 2,3,4,5
@@ -93,6 +95,7 @@ void A1_Vvod() {
   next(vvod); //(1.788391) - скорость сдвига[м / с].
 
   cout << "TypeTau = " << TypeTau << endl;
+  cout << "ExecutionMode = " << ExecutionMode << endl;
   cout << "Akur = " << Akur << endl;
   cout << "h0 = " << h0 << " mm." << endl;
   cout << "xSW = " << x3 << " mm." << endl;

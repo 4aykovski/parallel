@@ -30,8 +30,11 @@ Label6:
 
   TAU = A71_Return_TAU();
 
-  // A720_RungeKutt(TAU);
-  A720_RungeKutt_Parallel(TAU);
+  if (ExecutionMode == 1) {
+    A720_RungeKutt(TAU);
+  } else {
+    A720_RungeKutt_Parallel(TAU);
+  }
 
   Time = Time + TAU;
   TimePaz = Time * tpaz;

@@ -19,6 +19,7 @@ void A720_RungeKutt_Parallel(double TAU) {
     B0_A721_RK_Step_Parallel(2, TAU / 2);
     B0_A721_RK_Step_Parallel(3, TAU / 3);
   } else {
+    cout << TypeTau << endl;
     cout << "The schema type is incorrectly specified!!!" << endl;
   }
   A722_RK_LayerUp_Parallel();
