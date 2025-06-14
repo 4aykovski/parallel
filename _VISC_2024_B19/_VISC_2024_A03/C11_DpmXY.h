@@ -75,3 +75,82 @@ double d_m_Y(double f[]) {
 
 //!**************************************************************
 //    END MODULE M7_2110_D_PKMP_PIMI
+//
+//
+
+// Thread-safe версии функций производных
+double d_p_X_safe(double f[], int x_index) {
+  double a_pl_local, a_mi_local, s_local, A_local, B_local;
+
+  a_pl_local = f[x_index + 1] - f[x_index];
+  a_mi_local = f[x_index] - f[x_index - 1];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  A_local = f[x_index] + s_local * (1. - Gap * s_local) / 4 * a_mi_local +
+            s_local * (1. + Gap * s_local) / 4 * a_pl_local;
+
+  a_pl_local = f[x_index] - f[x_index - 1];
+  a_mi_local = f[x_index - 1] - f[x_index - 2];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  B_local = f[x_index - 1] + s_local * (1. - Gap * s_local) / 4 * a_mi_local +
+            s_local * (1. + Gap * s_local) / 4 * a_pl_local;
+  return A_local - B_local;
+}
+
+double d_m_X_safe(double f[], int x_index) {
+  double a_pl_local, a_mi_local, s_local, C_local, D_local;
+
+  a_pl_local = f[x_index + 2] - f[x_index + 1];
+  a_mi_local = f[x_index + 1] - f[x_index];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  C_local = f[x_index + 1] - s_local * (1. - Gap * s_local) / 4.0 * a_pl_local -
+            s_local * (1. + Gap * s_local) / 4.0 * a_mi_local;
+
+  a_pl_local = f[x_index + 1] - f[x_index];
+  a_mi_local = f[x_index] - f[x_index - 1];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  D_local = f[x_index] - s_local * (1. - Gap * s_local) / 4.0 * a_pl_local -
+            s_local * (1. + Gap * s_local) / 4.0 * a_mi_local;
+  return C_local - D_local;
+}
+
+double d_p_Y_safe(double f[], int y_index) {
+  double a_pl_local, a_mi_local, s_local, A_local, B_local;
+
+  a_pl_local = f[y_index + 1] - f[y_index];
+  a_mi_local = f[y_index] - f[y_index - 1];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  A_local = f[y_index] + s_local * (1. - Gap * s_local) / 4 * a_mi_local +
+            s_local * (1. + Gap * s_local) / 4 * a_pl_local;
+
+  a_pl_local = f[y_index] - f[y_index - 1];
+  a_mi_local = f[y_index - 1] - f[y_index - 2];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  B_local = f[y_index - 1] + s_local * (1. - Gap * s_local) / 4 * a_mi_local +
+            s_local * (1. + Gap * s_local) / 4 * a_pl_local;
+  return A_local - B_local;
+}
+
+double d_m_Y_safe(double f[], int y_index) {
+  double a_pl_local, a_mi_local, s_local, C_local, D_local;
+
+  a_pl_local = f[y_index + 2] - f[y_index + 1];
+  a_mi_local = f[y_index + 1] - f[y_index];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  C_local = f[y_index + 1] - s_local * (1. - Gap * s_local) / 4.0 * a_pl_local -
+            s_local * (1. + Gap * s_local) / 4.0 * a_mi_local;
+
+  a_pl_local = f[y_index + 1] - f[y_index];
+  a_mi_local = f[y_index] - f[y_index - 1];
+  s_local = (2 * a_pl_local * a_mi_local + 1e-06) /
+            (pow(a_pl_local, 2) + pow(a_mi_local, 2) + 1e-06);
+  D_local = f[y_index] - s_local * (1. - Gap * s_local) / 4.0 * a_pl_local -
+            s_local * (1. + Gap * s_local) / 4.0 * a_mi_local;
+  return C_local - D_local;
+}

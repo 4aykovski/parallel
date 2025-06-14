@@ -1,17 +1,16 @@
 #pragma once
-#include <chrono>
-#include <cmath>
 #include <ctime>
-#include <iomanip>
-#include <sstream>
+#include <chrono>
 #include <string>
+#include <sstream>
+#include <iomanip>
+#include <cmath>
 
 class Timer {
-  std::chrono::high_resolution_clock::time_point start;
-
+	std::chrono::high_resolution_clock::time_point start;
 public:
-  Timer();
-  double stop();
-  std::string get();
-  std::string getCurrentTime();
+	Timer();
+	double stop();
+	std::string get();
+	std::string getCurrentTime();
 };

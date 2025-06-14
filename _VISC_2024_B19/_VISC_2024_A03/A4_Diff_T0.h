@@ -1,5 +1,7 @@
 #pragma once
 
+#include <math.h>
+
 void A4_Diff_T0() {
   double pi = 4 * atan(1.0);
   double DifTime, DifC, DifH;

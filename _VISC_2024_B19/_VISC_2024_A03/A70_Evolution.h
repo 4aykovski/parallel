@@ -30,7 +30,8 @@ Label6:
 
   TAU = A71_Return_TAU();
 
-  A720_RungeKutt(TAU);
+  // A720_RungeKutt(TAU);
+  A720_RungeKutt_Parallel(TAU);
 
   Time = Time + TAU;
   TimePaz = Time * tpaz;
@@ -65,8 +66,8 @@ Label6:
     //	double time = t.stop();
     //	std::cout << std::fixed << time << std::endl;
     //	cout << "t(mkc) = " << Time * tpaz << "   " << NT << "   " << t.get() <<
-    //endl; 	cout << "t(mkc) = " << TimePaz << "   " << NT << "   " << t.get() <<
-    //endl;
+    // endl; 	cout << "t(mkc) = " << TimePaz << "   " << NT << "   " <<
+    // t.get() << endl;
     cout << "t(mkc)=" << TimePaz << "  " << t.get()
          << "  Nxp-iSW=" << Nxp - IndexSW() << endl;
   } // end if

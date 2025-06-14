@@ -1,5 +1,7 @@
 #pragma once
 
+#include <math.h>
+
 void A2_Param() {
   // cout << "M4_Param()" << endl;
   //! write(*, *) 'S4_Param.for'

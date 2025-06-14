@@ -19,8 +19,10 @@
 #include "A5_InitalCond.h"
 #include "A60_WriteData0.h"
 #include "A70_Evolution.h"
+#include <omp.h>
 
 int main() {
+  omp_set_num_threads(omp_get_num_procs()); // Использовать все доступные ядра
 
   cout << "vvod from files: "; //<< endl;
   cin >> nf;

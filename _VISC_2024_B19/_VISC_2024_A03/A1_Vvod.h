@@ -1,5 +1,10 @@
 #pragma once
 
+#include <iostream>
+#include <limits.h>
+#include <math.h>
+using namespace std;
+
 void next(ifstream &vvod) {
   vvod.clear();
   vvod.ignore(INT_MAX, '\n');
@@ -71,7 +76,7 @@ void A1_Vvod() {
   next(vvod); //(1.4 1.09) - Показатели адиабаты газов.(1.667 1.667)(1.4 1.09).
   vvod >> om1 >> om2;
   next(vvod); //(29.04 146.07) - Масса молекул 1 - го, 2 - го газа(40
-              //131.2)(29.04 146.07).
+              // 131.2)(29.04 146.07).
   vvod >> d0 >> anu12;
   next(vvod); //(0.097  0.786) - Диффузия, коэффициент.
 
